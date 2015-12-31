@@ -69,6 +69,9 @@ app.get('/players/meta',cors(), function (request, response) {
 app.get('/players/detail/:id',cors(), function (request, response) {
     dataservice.detail(Player, response,request.params.id);
 });
+app.get('/players/form',cors(), function (request, response) {
+    dataservice.init(Player, response);
+});
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
     var err = new Error('Not Found');

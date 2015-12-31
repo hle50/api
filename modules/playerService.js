@@ -56,6 +56,37 @@ exports.create = function (model, requestBody, response) {
         }
     });
 };
+exports.init = function (model,  response) {
+    var object = {
+        meta: {
+            name: "",
+            marketValue: ""
+        },
+        details: {
+            name: "",
+            position: "",
+            dateOfBirth: "",
+            nationality: "",
+            marketValue: ""
+        },
+        status: {
+            weight: "",
+            height: "",
+            defence: "",
+            attack: "",
+            speed: "",
+            shoot: "",
+            header: "",
+            balance: ""
+        },
+        history: [
+           
+        ]
+    };
+    response.setHeader('content-type', 'application/json');
+    response.end(JSON.stringify(object));
+    return JSON.stringify(object);
+};
 function toPlayer(body, Player) {
     return new Player({
         meta: body.meta,
