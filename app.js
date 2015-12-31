@@ -66,7 +66,7 @@ app.post('/players', cors(), function (request, response) {
 app.get('/players/meta',cors(), function (request, response) {
     dataservice.meta(Player, response);
 });
-app.get('/players/:id',cors(), function (request, response) {
+app.get('/players/detail/:id',cors(), function (request, response) {
     dataservice.detail(Player, response,request.params.id);
 });
 // catch 404 and forward to error handler
